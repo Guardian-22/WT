@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database Connection</title>
+</head>
+<body>
+
+ <h1>Connect PHP WITH MYSQL</h1>
+ <h2>Object Oriented Approach</h2>
+ <p>there are three way to connect to mysql in php</p>
+    <ul>
+        <li>MySQLi Object-Oriented</li>
+        <li>MySQLi Procedural</li>
+        <li>PDO</li>
+    </ul>
+             
+<?php
+// Database credentials
+$servername = "localhost:3306"; // or "127.0.0.1"
+$username = "root";
+$password = "";
+$database = "mydb";
+$table = "users";   
+
+// Create connection
+$conn = new mysqli($servername, $username, $password,$database);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT id, name, email FROM $table";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+    // output data of each row
+
+    while($row = $result->fetch_assoc()) {
+        echo "id: " . $row["id"]. " - Name: " . $row["name"]. " " . $row["email"]. "<br>";
+    }
+}
+else{
+    echo "0 results";
+}
+
+// Close connection
+$conn->close();
+
+?>
+
+    
+</body>
+</html>
