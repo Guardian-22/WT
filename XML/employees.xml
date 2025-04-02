@@ -1,0 +1,21 @@
+<!DOCTYPE employees SYSTEM "employees.dtd">
+<employees>
+    <employee>
+        <name>Anuj Kandalkar</name>
+        <emp_id>101</emp_id>
+        <department>HR</department>
+        <salary>75000</salary>
+    </employee>
+    <employee>
+        <name>Aditya Patil</name>
+        <emp_id>102</emp_id>
+        <department>IT</department>
+        <salary>65000</salary>
+    </employee>
+     <employee>
+        <name>Mehatab Sanadi</name>
+        <emp_id>103</emp_id>
+        <department>IT</department>
+        <salary>60000</salary>
+    </employee>
+</employees>
